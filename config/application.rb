@@ -12,8 +12,8 @@ require "sprockets/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-#Bundler.require(*Rails.groups)
-Bundler.require(*Rails.groups(assets: %w(development test)))
+Bundler.require(*Rails.groups)
+
 module Cypress
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
