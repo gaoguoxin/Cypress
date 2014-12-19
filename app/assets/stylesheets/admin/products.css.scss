@@ -1,0 +1,32 @@
+@import 'compass';
+body.admin{
+	.products{
+		a{
+			color:#fff;
+			text-decoration: none;
+			&:hover,&:active{
+				color:#fff;
+				text-decoration: none;
+			}
+			&.btn{
+				margin-right:4px;
+			}
+		}
+	}
+	.product_form{
+		.note-editor{
+			.note-toolbar.btn-toolbar{
+				margin-left:0px;
+			}
+			.note-editable{
+				height:300px;
+			}
+		}
+		#admin_product_description{
+			display:none;
+		}
+		#admin_product_category_id{
+			display:none;
+		}
+	}
+}

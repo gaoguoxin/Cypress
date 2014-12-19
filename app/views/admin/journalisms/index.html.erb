@@ -1,0 +1,31 @@
+<h2 class="sub-header">新闻列表</h2>
+<div class="table-responsive">
+  <div class='journalisms'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class='col-xs-3'>标题</th>
+          <th class='col-xs-3'>创建时间</th>
+          <th class='col-xs-3'>状态</th>
+          <th class='col-xs-3'>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @admin_journalisms.each do |journalism| %>
+          <tr>
+            <td><%= journalism.title %></td>
+            <td><%= journalism.created_at.strftime('%F')%></td>
+            <td><%= journalism.show_status %></td>
+            <td>
+              <a role="button" class="btn btn-primary" href="<%= admin_journalism_path(journalism)%>">查看</button>
+              <a role="button" class="btn btn-warning" href="<%= edit_admin_journalism_path(journalism)%>">修改</button>
+            </td>
+          </tr> 
+        <% end %>
+      </tbody>
+    </table>    
+    <%= link_to '添加新闻', new_admin_journalism_path,:class => "btn btn-primary pull-right" %>
+  </div>
+</div>
+
+

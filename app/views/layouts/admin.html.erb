@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>柏树庄|绿色有机食品|循环农业</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'admin/application', media: 'all' %>
+  <%= javascript_include_tag 'admin/application' %>
+  <%= csrf_meta_tags %>  
+</head>
+<body class='admin'>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="javascript:void(0);">柏树庄</a>
+        </div>
+      </div>
+    </nav>
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="<%= current?('journalisms',['index','show','edit'])%>"><a href="<%= admin_journalisms_path %>">新闻列表</a></li>
+            <li class="<%= current?('journalisms',['new'])%>"><a href="<%=new_admin_journalism_path%>">添加新闻</a></li>
+          </ul>
+          <hr>  
+          <ul class="nav nav-sidebar">
+            <li class="<%= current?('categories',['index','show','edit'])%>"><a href="<%= admin_categories_path %>">分类列表</a></li>
+            <li class="<%= current?('categories',['new'])%>"><a href="<%=new_admin_category_path%>">添加分类</a></li>
+          </ul>
+          <hr>
+          <ul class="nav nav-sidebar">
+            <li class="<%= current?('products',['index','show','edit'])%>"><a href="<%= admin_products_path %>">产品列表</a></li>
+            <li class="<%= current?('products',['new'])%>"><a href="<%= new_admin_product_path %>">添加产品</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

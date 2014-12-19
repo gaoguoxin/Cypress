@@ -1,0 +1,18 @@
+@import 'compass';
+body.admin{
+	.categories{
+		a{
+			color:#fff;
+			text-decoration: none;
+			&:hover,&:active{
+				color:#fff;
+				text-decoration: none;
+			}
+			&.btn{
+				margin-right:4px;
+			}
+		}
+	}
+	.category_form{
+	}
+}

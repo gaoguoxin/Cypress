@@ -1,0 +1,22 @@
+<p>
+  <strong>产品名称:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>图片:</strong>
+  <%= image_tag(@product.image_url) if @product.image? %>
+</p>
+
+<p>
+  <strong>产品描述:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>状态:</strong>
+  <%= @product.show_status %>
+</p>
+
+<%= link_to '编辑', edit_admin_product_path(@product) %> |
+<%= link_to '返回', admin_products_path %>

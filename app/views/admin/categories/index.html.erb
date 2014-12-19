@@ -1,0 +1,28 @@
+<h2 class="sub-header">产品分类列表</h2>
+<div class="table-responsive">
+  <div class='categories'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class='col-xs-4'>分类名称</th>
+          <th class='col-xs-4'>状态</th>
+          <th class='col-xs-4'>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= category.show_status %></td>
+        <td>
+          <%= link_to '查看', category,:class => 'btn btn-primary' %>
+          <%= link_to '编辑', edit_admin_category_path(category),:class => 'btn btn-success' %>
+          <%= link_to '删除', category, method: :delete, data: { confirm: '确定删除？' },:class => 'btn btn-danger' %>
+      </tr>
+    <% end %>
+      </tbody>
+    </table> 
+    <%= link_to '添加新分类', new_admin_category_path,:class => "btn btn-primary pull-right" %>   
+  </div>
+</div>
+

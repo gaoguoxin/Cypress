@@ -1,0 +1,50 @@
+<%= form_for(@product,:html => {:multipart => true,:class => 'product_form'}) do |f| %>
+
+  <div class="form-group row">
+    <label>产品名称</label><br>  
+    <%= f.text_field :name,:class => 'col-xs-12' %>
+  </div>
+
+  <div class="form-group row">
+    <%= f.hidden_field :category_id,:class => 'col-xs-12' %>
+    <label>所属分类</label><br>  
+    <div class="dropdown my-dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+        <span class="opt"><%= @product.category.try(:name) || '请选择分类'%></span><span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <% @categories.each do |category|%>
+          <li role="presentation" data-category='<%= category.id.to_s%>'><a role="menuitem" tabindex="-1" href="javascript:void(0);"><%= category.name%></a></li>
+        <% end %>
+      </ul>
+    </div>  
+  </div>  
+
+  <div class="form-group row">
+    <label>产品图片(1张)</label><br> 
+    <%= image_tag(@product.image_url) if @product.image? %>
+    <%= f.file_field :image %>     
+  </div>
+
+  <div class="form-group row">
+    <label>产品描述</label><br>
+    <div id="product_summernote"><%= raw @product.description %></div> 
+  </div>
+  <%= f.text_area :description,:class => 'col-xs-12' %>
+  <div class="form-group row text-right">
+    <label>是否发布</label>
+    <%= f.hidden_field :status,:class => 'col-xs-12' %>
+    <div class="btn-group my-dropdown">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class='opt'>是</span><span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li data-value='1'><a href="javascript:void(0);">是</a></li>
+        <li data-value='0'><a href="javascript:void(0);">否</a></li>
+      </ul>
+    </div>    
+  </div> 
+  <div class="form-group row">
+    <a href="javascript:void(0);" class="btn btn-primary pull-right">提交</a>
+  </div>
+<% end %>

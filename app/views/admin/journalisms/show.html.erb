@@ -1,0 +1,16 @@
+
+<p>
+  <strong>标题:</strong>
+  <%= @admin_journalism.title %>
+</p>
+<p>
+	<strong>状态:</strong>
+	<%= @admin_journalism.show_status %>
+</p>
+<p>
+  <strong>内容:</strong>
+  <%= raw @admin_journalism.content %>
+</p>
+
+<%= link_to '编辑', edit_admin_journalism_path(@admin_journalism) %> |
+<%= link_to '返回', admin_journalisms_path %>

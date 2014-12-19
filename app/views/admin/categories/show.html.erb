@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名称:</strong>
+  <%= @category.name %>
+</p>
+
+<p>
+  <strong>状态:</strong>
+  <%= @category.show_status %>
+</p>
+
+<%= link_to '编辑', edit_admin_category_path(@category) %> |
+<%= link_to '返回', admin_categories_path %>

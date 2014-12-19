@@ -1,0 +1,33 @@
+<h2 class="sub-header">产品列表</h2>
+<div class="table-responsive">
+  <div class='products'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class='col-xs-2'>名称</th>
+          <th class='col-xs-2'>图片</th>
+          <th class='col-xs-2'>所属分类</th>
+          <th class='col-xs-2'>创建时间</th>
+          <th class='col-xs-2'>状态</th>
+          <th class='col-xs-2'>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= image_tag product.image.thumb.url %></td>
+            <td><%= product.category.name %></td>
+            <td><%= product.created_at.strftime('%F')%></td>
+            <td><%= product.show_status %></td>
+            <td>
+              <a role="button" class="btn btn-primary" href="<%= admin_product_path(product)%>">查看</button>
+              <a role="button" class="btn btn-warning" href="<%= edit_admin_product_path(product)%>">修改</button>
+            </td>
+          </tr> 
+        <% end %>
+      </tbody>
+    </table>    
+    <%= link_to '添加新闻', new_admin_product_path,:class => "btn btn-primary pull-right" %>
+  </div>
+</div>

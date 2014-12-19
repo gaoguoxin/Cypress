@@ -1,0 +1,24 @@
+<div class="row">
+  <%= form_for(@category,:html => {:class => 'admin_category col-xs-6 col-xs-offset-3'}) do |f| %>
+    <div class="form-group row">
+      <label>分类名称</label><br>  
+      <%= f.text_field :name,:class => 'col-xs-12' %>
+    </div>
+    <div class="form-group row">
+      <label>是否发布</label>
+      <%= f.hidden_field :status%>
+      <div class="btn-group my-dropdown">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class='opt'>是</span><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li data-value='1'><a href="javascript:void(0);">是</a></li>
+          <li data-value='0'><a href="javascript:void(0);">否</a></li>
+        </ul>
+      </div>    
+    </div>
+    <div class="form-group row">
+      <a href="javascript:void(0);" class="btn btn-primary pull-left col-xs-12">提交</a>
+    </div>
+  <% end %>  
+</div>

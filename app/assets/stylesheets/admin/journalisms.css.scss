@@ -1,0 +1,29 @@
+@import 'compass';
+body.admin{
+	.journalisms{
+		a{
+			color:#fff;
+			text-decoration: none;
+			&:hover,&:active{
+				color:#fff;
+				text-decoration: none;
+			}
+			&.btn{
+				margin-right:4px;
+			}
+		}
+	}
+	.journalism_form{
+		.note-editor{
+			.note-toolbar.btn-toolbar{
+				margin-left:0px;
+			}
+			.note-editable{
+				height:300px;
+			}
+		}
+		#admin_journalism_content{
+			display:none;
+		}
+	}
+}
