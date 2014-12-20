@@ -16,7 +16,7 @@
 <body class='front'>
 <div id="main">
   <header>
-    <div class="logo_wrapper"><a href="index.html" class="logo"><img src="/assets/logo.png" alt=""></a></div> 
+    <div class="logo_wrapper"><a href="index.html" class="logo"><%= image_tag('logo.png')%></a></div> 
 <!--
     <div class="top1">
       <div class="container">
@@ -101,25 +101,25 @@
   </header> 
   <div id="slider" class="clearfix">
     <div id="camera_wrap">
-      <div data-src="/assets/slide1.jpg">
+      <div data-src="<%= asset_path('slide1.jpg')%>">
         <div class="camera_caption fadeIn">
           <div class="txt1">A satisfied customer </div>
           <div class="txt2">is the best business strategy of all.</div>     
         </div>     
       </div>
-      <div data-src="/assets/slide2.jpg">
+      <div data-src="<%= asset_path('slide2.jpg')%>">
         <div class="camera_caption fadeIn">
           <div class="txt1">A satisfied customer </div>
           <div class="txt2">is the best business strategy of all.</div>     
         </div>     
       </div>
-      <div data-src="/assets/slide3.jpg">
+      <div data-src="<%= asset_path('slide3.jpg')%>">
         <div class="camera_caption fadeIn">
           <div class="txt1">A satisfied customer </div>
           <div class="txt2">is the best business strategy of all.</div>     
         </div>     
       </div>
-      <div data-src="/assets/slide4.jpg">
+      <div data-src="<%= asset_path('slide4.jpg')%>">
         <div class="camera_caption fadeIn">
           <div class="txt1">A satisfied customer </div>
           <div class="txt2">is the best business strategy of all.</div>     
