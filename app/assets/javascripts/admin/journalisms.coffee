@@ -1,4 +1,5 @@
 $(->
+	$("#admin_journalism_image").fileinput({showUpload: false})
 	$('#summernote').summernote();
 	$('.journalism_form a.btn-primary').click(->
 		title   = $('#admin_journalism_title').val()

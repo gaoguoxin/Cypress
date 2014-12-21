@@ -49,6 +49,6 @@ class Admin::JournalismsController < Admin::AdminController
     end
 
     def admin_journalism_params
-      params.require(:admin_journalism).permit(:title, :content,:status)
+      params.require(:admin_journalism).permit(:title, :content,:status,:image)
     end
 end

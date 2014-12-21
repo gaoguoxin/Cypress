@@ -4,6 +4,11 @@
   <%= @admin_journalism.title %>
 </p>
 <p>
+  <strong>标题配图:</strong>
+  <%= image_tag(@admin_journalism.image_url(:thumb)) if @admin_journalism.image?  %>
+</p>
+
+<p>
 	<strong>状态:</strong>
 	<%= @admin_journalism.show_status %>
 </p>

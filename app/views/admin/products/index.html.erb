@@ -16,7 +16,7 @@
         <% @products.each do |product| %>
           <tr>
             <td><%= product.name %></td>
-            <td><%= image_tag product.image.thumb.url %></td>
+            <td><%= image_tag product.image_url(:thumb) %></td>
             <td><%= product.category.name %></td>
             <td><%= product.created_at.strftime('%F')%></td>
             <td><%= product.show_status %></td>

@@ -1,12 +1,17 @@
-<%= form_for(@admin_journalism,:role => 'form',:html => {:class => "journalism_form"}) do |f| %>
+<%= form_for(@admin_journalism,:role => 'form',:html => {:multipart => true,:class => "journalism_form"}) do |f| %>
   <div class="form-group row">
     <label>新闻标题</label><br>  
     <%= f.text_field :title,:class => 'col-xs-12' %>
   </div>
   <div class="form-group row">
+    <label>标题配图</label><br> 
+    <%= image_tag(@admin_journalism.image_url) if @admin_journalism.image? %>
+    <%= f.file_field :image %>      
+  </div>   
+  <div class="form-group row">
     <label>新闻内容</label><br>
     <div id="summernote"><%= raw @admin_journalism.content %></div> 
-  </div>
+  </div> 
   <div class="form-group row text-right">
     <label>是否发布</label>
     <%= f.hidden_field :status,:class => 'col-xs-12' %>
