@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>管理员登录页面</title>
-    <%= stylesheet_link_tag  'front/application', media: 'all' %>
-    <%= javascript_include_tag 'front/application' %>
+    <%= stylesheet_link_tag  'sessions-bundle', media: 'all' %>
+    <%= javascript_include_tag 'sessions-bundle' %>
   </head>
   <body>
     <div class="container session">
       <form class="form-signin" role="form">
         <h4 class="form-signin-heading text-center">请登录</h4>
-        <label for="mobile" class="sr-only">手机号</label>
+        <label for="mobile" class="sr-only">手机</label>
         <input type="text" id="mobile" class="form-control" placeholder="Mobile" required autofocus><br>
         <label for="password" class="sr-only">密码</label>
-        <input type="password" id="password" class="form-control" placeholder="Password" required>
+        <input type="password" id="password" class="form-control" placeholder="Password" required><br>
         <a class="btn btn-lg btn-primary btn-block" role='button'>登录</a>
       </form>
     </div>

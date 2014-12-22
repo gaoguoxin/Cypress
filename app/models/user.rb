@@ -9,7 +9,7 @@ class User
   def self.login(opt)
   	crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
   	user  = self.where(mobile:opt[:mobile]).first
-  	return user if crypt.decrypt_and_verify(user.password) ==  opt[:password]	
+  	return user if user && crypt.decrypt_and_verify(user.password) ==  opt[:password]	
   	return nil
   end
 
