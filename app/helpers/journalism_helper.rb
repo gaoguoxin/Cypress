@@ -1,0 +1,2 @@
+module JournalismHelper
+end

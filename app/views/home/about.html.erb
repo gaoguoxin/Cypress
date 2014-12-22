@@ -15,11 +15,13 @@
               <h1>企业简介</h1>
               <div class="thumb3">
                 <div class="thumbnail clearfix">
-                  <figure class="img-polaroid"><img src="images/company01.jpg" alt=""></figure>
+                  <figure class="img-polaroid"><%= image_tag('company01.jpg')%></figure>
                   <div class="caption">
-                    <h4>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore      magna. Ipsum dolor sit.</h4>
+                    <h4>
+                      武威柏树庄醋业有限责任公司地处甘肃省武威市凉州区黄羊镇。公司地理位置优越，交通便利，现为省内酿造食醋产能较大的企业。公司始建于1983年2月，经过二十多年的艰苦创业和不懈努力，树立了“柏树庄”牌酱油、熏醋的优良品牌和良好形象
+                    </h4>
                     <p>
-                      amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer      adipiscing elit. Nunc suscipit. Suspendisse enim arcu, convallis non, cursus sed, dignissim et, est. Aenean semper      aliquet libero. In ante velit, cursus ut, ultrices vitae, tempor ut, risus. Duis pulvinar. Vestibulum vel pede at     sapien sodales mattis. Quisque pretium, lacus nec iaculis vehicula, arcu libero consectetuer massa, auctor aliquet    mauris ligula id ipsum. Vestibulum pede.
+                      柏树庄有机农场是柏树庄闭环循环农业中重要的一环，处于酿造、发酵、等诸多环节的最后一步，柏树庄有机蔬菜严格按照有机生产规程，禁止使用任何化学合成的农药、化肥，以及基因工程生物及其产物；我们遵循自然规律和生态学原理，采取一系列可持续发展的农业技术，协调种植平衡，2003年12月“柏树庄”酿造食醋被中国绿色食品发展中心认定为“绿色食品”证书号：LB-56-0312271508A。
                     </p>              
                   </div>
                 </div>
@@ -30,7 +32,7 @@
                 <div class="span3">
                   <div class="thumb4">
                     <div class="thumbnail clearfix">
-                      <figure><img src="images/company02.jpg" alt=""></figure>
+                      <figure><%= image_tag('company02.jpg')%></figure>
                       <div class="caption">
                         <div class="txt1">Thomas Mitch</div>
                         <div class="txt2">Elit, sed diam nonummy.</div>
@@ -41,7 +43,7 @@
                 <div class="span3">
                   <div class="thumb4">
                     <div class="thumbnail clearfix">
-                      <figure><img src="images/company03.jpg" alt=""></figure>
+                      <figure><%= image_tag('company03.jpg')%></figure>
                       <div class="caption">
                         <div class="txt1">Patrik williams</div>
                         <div class="txt2">Elit, sed diam nonummy.</div>
@@ -52,7 +54,7 @@
                 <div class="span3">
                   <div class="thumb4">
                     <div class="thumbnail clearfix">
-                      <figure><img src="images/company04.jpg" alt=""></figure>
+                      <figure><%= image_tag('company04.jpg')%></figure>
                       <div class="caption">
                         <div class="txt1">Adam smith</div>
                         <div class="txt2">Elit, sed diam nonummy.</div>
@@ -65,7 +67,7 @@
                 <div class="span3">
                   <div class="thumb4">
                     <div class="thumbnail clearfix">
-                      <figure><img src="images/company05.jpg" alt=""></figure>
+                      <figure><%= image_tag('company05.jpg')%></figure>
                       <div class="caption">
                         <div class="txt1">Laura smith</div>
                         <div class="txt2">Elit, sed diam nonummy.</div>
@@ -76,7 +78,7 @@
                 <div class="span3">
                   <div class="thumb4">
                     <div class="thumbnail clearfix">
-                      <figure><img src="images/company06.jpg" alt=""></figure>
+                      <figure><%= image_tag('company06.jpg')%></figure>
                       <div class="caption">
                         <div class="txt1">jesica rodos</div>
                         <div class="txt2">Elit, sed diam nonummy.</div>
@@ -87,7 +89,7 @@
                 <div class="span3">
                   <div class="thumb4">
                     <div class="thumbnail clearfix">
-                      <figure><img src="images/company07.jpg" alt=""></figure>
+                      <figure><%= image_tag('company07.jpg')%></figure>
                       <div class="caption">
                         <div class="txt1">Peter meno</div>
                         <div class="txt2">Elit, sed diam nonummy.</div>
@@ -98,26 +100,26 @@
               </div>      
             </div>
             <div class="span3">
-              <h3>Whats New</h3>
+              <h3>企业新闻</h3>
               <div class="thumb5">
                 <div class="thumbnail clearfix">
-                  <figure class="img-polaroid"><img src="images/company08.jpg" alt=""></figure>
+                  <figure class="img-polaroid"><%=image_tag(@jour.image_url(:middle))%></figure>
                   <div class="caption">
                     <h4>
-                      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor si
+                      <%= @jour.title %>
                     </h4>
                     <p>
-                      amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing elit. Nunc suscipit. Suspendisse enim arcu,      convallis non, cursus sed, dignissim et, est. Aenean semper aliquet libero. In ante velit, cursus ut, ultrices vitae, tempor ut, risus. Duis    pulvinar. Vestibulum vel pede at sapien sodales mattis. Quisque pretium, lacus nec iaculis vehicula, arcu libero consectetuer massa, auctor      aliquet mauris ligula id ipsum. Vestibulum pede.
+                      <%= raw @jour.content.truncate(400)%>
                     </p>
-                    <div class="text-right"><a href="#" class="button1">Details</a></div>
+                    <div class="text-right"><a href="#" class="button1">查看详细</a></div>
                   </div>
                 </div>
               </div>
               <div class="line1"></div>
               <div class="thumb6">
                 <div class="thumbnail clearfix">
-                  <figure class=""><img src="images/company09.jpg" alt=""></figure>
-                  <div class="caption2">
+                  <figure class=""><%= image_tag('company09.png')%></figure>
+<!--                   <div class="caption2">
                     Contacts
                   </div>
                   <div class="caption">
@@ -127,7 +129,7 @@
                       +39 1234 567 890
                     </div>
                     <a href="#" class="button0">mail us</a>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>

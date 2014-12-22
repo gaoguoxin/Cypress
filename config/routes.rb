@@ -2,20 +2,9 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :journalisms
-  end
-
-  namespace :admin do
-    resources :news
-  end
-
-  namespace :admin do
     resources :jobs
-  end
-
-  namespace :admin do
     resources :categories
-    resources :products
-    resources :news
+    resources :products    
   end
 
   root 'home#index'
@@ -26,6 +15,7 @@ Rails.application.routes.draw do
   get  'logout' => 'sessions#destroy'
 
   resource :home
+  resources :journalisms
 
   resources :users
 
