@@ -1,4 +1,4 @@
-class JournalismController < ApplicationController
+class JournalismsController < ApplicationController
 	def index
 		@journalisms = Journalism.valid.desc(:updated_at)
 	end

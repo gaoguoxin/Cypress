@@ -10,6 +10,12 @@ class HomeController < ApplicationController
   	@jour = Journalism.valid.desc(:updated_at).first
   end
 
+  def contact
+  end
+
+  def clients
+  end
+
   def job
   end
 end

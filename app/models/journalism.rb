@@ -11,5 +11,5 @@ class Journalism
   field :image,type: String
   field :status, type: Integer,default:VALID	
 
-  scope :valid ->{where(status:VALID)}
+  scope :valid, ->{where(status:VALID)}
 end

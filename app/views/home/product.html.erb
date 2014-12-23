@@ -1,28 +1,35 @@
 <% content_for :header  do %>
 <script type='text/javascript'>
   $(window).load(function() {
+    var cate = window.location.href.split('#')
+    if (cate.length > 0){
+      cate = '.' + cate[1]; //具体的某个分类
+    }else{
+      cate = '.twp' ;//调味品分类
+    }
+
+    $('#isotope-filters a[data-filter="' + cate + '"]').addClass('selected');
+    
     var $container = $('#isotope-items'),
-      $optionSet = $('#isotope-options'), 
-        $optionSets = $('#isotope-filters'), 
-        $optionLinks = $optionSets.find('a'); 
-      $container.isotope({ 
-          filter: '*',
-          layoutMode: 'fitRows'
-      });  
-      $optionLinks.click(function(){ 
-        var $this = $(this); 
+    $optionSet = $('#isotope-options'), 
+    $optionSets = $('#isotope-filters'), 
+    $optionLinks = $optionSets.find('a'); 
+    $container.isotope({ 
+      filter: cate
+    });  
+    $optionLinks.click(function(){ 
+      var $this = $(this); 
       if ( $this.hasClass('selected') ) { 
         return false; 
       }       
-        $optionSet.find('.selected').removeClass('selected'); 
-        $this.addClass('selected');
-  
-          var selector = $(this).attr('data-filter'); 
-          $container.isotope({ 
-              filter: selector            
-          }); 
-          return false; 
-      });     
+      $optionSet.find('.selected').removeClass('selected'); 
+      $this.addClass('selected');
+      var selector = $(this).attr('data-filter'); 
+      $container.isotope({ 
+          filter: selector            
+      }); 
+      return false; 
+    });     
     $(window).on("resize", function( event ) {  
       $container.isotope('reLayout');   
     });   
@@ -33,29 +40,24 @@
 
 <div id="content">
   <div id="content2">
-    <div class="page_title">
-      <div class="container">
-        <div class="row">
-          <div class="span12">Gallery</div>  
-        </div>  
-      </div>  
-    </div>
     <div id="inner">
       <div id="inner2">
         <div class="container">
           <div class="row"> 
             <div class="span12">
-              <h1>Our Products</h1>
+              <h1>我们的产品</h1>
               <div id="isotope-options">
                   <ul id="isotope-filters" class="clearfix">
-                      <li><a href="#" class="selected" data-filter="*">Show All</a></li> 
-                    <li><a href="#" data-filter=".isotope-filter1">Category 1</a></li> 
-                    <li><a href="#" data-filter=".isotope-filter2">Category 2</a></li> 
-                    <li><a href="#" data-filter=".isotope-filter3">Category 3</a></li>               
+                    <li><a href="#" data-filter=".twp">调味品</a></li> 
+                    <li><a href="#" data-filter=".meat">肉类</a></li> 
+                    <li><a href="#" data-filter=".fruit">果蔬</a></li>
+                    <li><a href="#" data-filter=".flour">面粉</a></li> 
+                    <li><a href="#" data-filter=".agricultural">农副产品</a></li> 
+                    <li><a href="#" data-filter=".oil">食用油</a></li>                                      
                   </ul>            
               </div>
               <ul class="thumbnails" id="isotope-items">      
-                <li class="span3 isotope-element isotope-filter1">
+                <li class="span3 isotope-element isotope-filter1 twp">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -77,7 +79,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter2">
+                <li class="span3 isotope-element isotope-filter2  twp">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -99,7 +101,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter3">
+                <li class="span3 isotope-element isotope-filter3  twp">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -121,7 +123,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter1">
+                <li class="span3 isotope-element isotope-filter1  twp">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -143,7 +145,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter2">
+                <li class="span3 isotope-element isotope-filter2  twp">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -165,7 +167,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter3">
+                <li class="span3 isotope-element isotope-filter3  twp">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -187,7 +189,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter1">
+                <li class="span3 isotope-element isotope-filter1  meat">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -209,7 +211,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter2">
+                <li class="span3 isotope-element isotope-filter2  meat">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -231,7 +233,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter3">
+                <li class="span3 isotope-element isotope-filter3  meat">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -253,7 +255,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter1">
+                <li class="span3 isotope-element isotope-filter1  meat">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -275,7 +277,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter2">
+                <li class="span3 isotope-element isotope-filter2  meat">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -297,7 +299,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="span3 isotope-element isotope-filter3">
+                <li class="span3 isotope-element isotope-filter3  meat">
                   <div class="thumb-isotope">
                     <div class="thumbnail clearfix">
                       <a href="<%= asset_path('blank.png')%>">
@@ -318,7 +320,535 @@
                       </div>
                     </div>
                   </div>
-                </li>           
+                </li>
+                <li class="span3 isotope-element isotope-filter1 fruit">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery01.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter2  fruit">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery02.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter3  fruit">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery03.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter1  fruit">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery04.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter2  fruit">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery05.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter3  fruit">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery06.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter1  flour">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery07.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter2  flour">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery08.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter3  flour">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery09.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter1  flour">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery10.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter2  flour">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery11.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter3  flour">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery12.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li> 
+                <li class="span3 isotope-element isotope-filter1 agricultural">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery01.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter2  agricultural">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery02.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter3  agricultural">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery03.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter1  agricultural">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery04.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter2  agricultural">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery05.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter3  agricultural">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery06.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter1  oil">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery07.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter2  oil">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery08.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter3  oil">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery09.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter1  oil">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery10.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter2  oil">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery11.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3 isotope-element isotope-filter3  oil">
+                  <div class="thumb-isotope">
+                    <div class="thumbnail clearfix">
+                      <a href="<%= asset_path('blank.png')%>">
+                        <figure>
+                          <%= image_tag('gallery12.jpg')%><em></em>
+                        </figure>
+                      </a>
+                      <div class="caption">
+                        <div class="txt1">
+                          Product name
+                        </div>
+                        <div class="txt2">
+                          Lorem ipsun lore funte don it, sed diam nonummy 
+                        </div>
+                        <div class="txt3">
+                          Price: $50
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>                                            
               </ul>
             </div>
           </div>

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get  'product' => 'home#product'
   get  'about' => 'home#about'
   get  'job' => 'home#job'
+  get  'contact' => 'home#contact'
+  get  'clients'  => 'home#clients'
   get  'login' => 'sessions#new'
   get  'logout' => 'sessions#destroy'
 
