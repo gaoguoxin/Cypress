@@ -12,12 +12,14 @@
             <div class="span3 rside">
             	<h3>其他新闻</h3>
             	<% @journalisms.each_with_index do |jour|%>
-								<div class='row'>
+            		<% unless jour.id.to_s == @jour.id.to_s%>
+									<div class='row'>
 										<a href="/journalisms/<%= jour.id.to_s%>">
 											<div class="span1"><%= image_tag(jour.image_url(:thumb),:class => 'img-responsive')%></div>
 											<div class="span2"><%=jour.title%></div>
 										</a>
-								</div>
+									</div>            		
+            		<% end %>
             	<% end %>
             </div>
 					</div>				
