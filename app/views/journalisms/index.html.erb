@@ -1,0 +1,113 @@
+<div id="content">
+	<div id="content2">
+		<div id="inner">
+			<div id="inner2">
+				<div class="container">
+					<div class="row">
+						<div class="span9">
+							<h1>头条新闻</h1>
+							<div class="thumb3">
+								<div class="thumbnail clearfix">
+									<figure class="img-polaroid"><%= image_tag(@journalisms.first.image_url(:large))%></figure>
+									<div class="caption">
+										<h4>
+											<%= @journalisms.first.title%>
+										</h4>
+										<p>
+											<%= raw @journalisms.first.content.truncate(2500)%>
+										</p>
+										<a href="/journalisms/<%= @journalisms.first.id.to_s %>" class="button1">Read more </a>							
+									</div>
+								</div>
+							</div>
+							<div class="line1"></div>
+							<h2>Services Overview</h2>
+							<div class="row">
+								<div class="span3">
+									<div class="thumb5">
+										<div class="thumbnail clearfix">
+											<figure class="img-polaroid"><img src="images/services02.jpg" alt=""></figure>
+											<div class="caption">
+												<h4>
+													Lorem ipsum dolor sit amet conse ctetur adipisicing
+												</h4>
+												<p>
+													amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing 
+												</p>
+												<div class="text-right"><a href="#" class="button1">Details</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="span3">
+									<div class="thumb5">
+										<div class="thumbnail clearfix">
+											<figure class="img-polaroid"><img src="images/services03.jpg" alt=""></figure>
+											<div class="caption">
+												<h4>
+													Lorem ipsum dolor sit amet conse ctetur adipisicing
+												</h4>
+												<p>
+													amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing 
+												</p>
+												<div class="text-right"><a href="#" class="button1">Details</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="span3">
+									<div class="thumb5">
+										<div class="thumbnail clearfix">
+											<figure class="img-polaroid"><img src="images/services04.jpg" alt=""></figure>
+											<div class="caption">
+												<h4>
+													Lorem ipsum dolor sit amet conse ctetur adipisicing
+												</h4>
+												<p>
+													amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing 
+												</p>
+												<div class="text-right"><a href="#" class="button1">Details</a></div>
+											</div>
+										</div>
+									</div>
+								</div>										
+							</div>						
+						</div>
+						<div class="span3">
+							<h3>Special Offers</h3>
+							<div class="thumb5">
+								<div class="thumbnail clearfix">
+									<figure class="img-polaroid"><img src="images/services05.jpg" alt=""></figure>
+									<div class="caption">
+										<h4>
+											Lorem ipsum dolor sit amet conse ctetur adipisicing 
+										</h4>
+										<p>
+											amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing elit. 
+										</p>
+										<div class="text-right"><a href="#" class="button1">Details</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="line1"></div>
+							<div class="thumb5">
+								<div class="thumbnail clearfix">
+									<figure class="img-polaroid"><img src="images/services06.jpg" alt=""></figure>
+									<div class="caption">
+										<h4>
+											Lorem ipsum dolor sit amet conse ctetur adipisicing 
+										</h4>
+										<p>
+											amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing elit. 
+										</p>
+										<div class="text-right"><a href="#" class="button1">Details</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>	
+</div>

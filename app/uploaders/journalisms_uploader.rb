@@ -45,6 +45,14 @@ class JournalismsUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [258, 160]
   end  
 
+  version :large do
+    process :resize_to_fill => [288, 176]
+  end  
+
+  version :submiddle do 
+    process :resize_to_fill => [208, 208]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list

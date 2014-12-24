@@ -2,14 +2,13 @@
 <script type='text/javascript'>
   $(window).load(function() {
     var cate = window.location.href.split('#')
-    if (cate.length > 0){
+    if (cate.length > 1){
       cate = '.' + cate[1]; //具体的某个分类
     }else{
       cate = '.twp' ;//调味品分类
     }
 
     $('#isotope-filters a[data-filter="' + cate + '"]').addClass('selected');
-    
     var $container = $('#isotope-items'),
     $optionSet = $('#isotope-options'), 
     $optionSets = $('#isotope-filters'), 
