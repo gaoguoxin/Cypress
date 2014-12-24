@@ -5,5 +5,6 @@ class JournalismsController < ApplicationController
 
 	def show
 		@jour = Journalism.find(params[:id])
+		@journalisms = Journalism.valid.desc(:updated_at)
 	end
 end

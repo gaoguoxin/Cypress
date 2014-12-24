@@ -10,6 +10,18 @@ class HomeController < ApplicationController
   	@jour = Journalism.valid.desc(:updated_at).first
   end
 
+  #循环产业园
+  def circulate
+  end
+
+  #经销商
+  def agency
+  end
+
+  #美味厨房
+  def galley
+  end
+
   def contact
   end
 
