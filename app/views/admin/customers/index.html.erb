@@ -1,0 +1,33 @@
+<h2 class="sub-header">经销商列表</h2>
+<div class="table-responsive">
+  <div class='products'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class='col-xs-2'>姓名</th>
+          <th class='col-xs-3'>收货地址</th>
+          <th class='col-xs-2'>赠品剩余</th>
+          <th class='col-xs-1'>状态</th>
+          <th class='col-xs-2'>创建时间</th>
+          <th class='col-xs-2'>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @customers.each do |customer| %>
+          <tr>
+            <td><%= customer.username %></td>
+            <td><%= customer.address %></td>
+            <td><%= customer.show_remain %></td>
+            <td><%= customer.show_status %></td>
+            <td><%= customer.created_at.strftime('%F')%></td>
+            <td>
+              <a role="button" class="btn btn-primary" href="<%= admin_customer_path(customer)%>">查看</button>
+              <a role="button" class="btn btn-warning" href="<%= edit_admin_customer_path(customer)%>">修改</button>
+            </td>
+          </tr> 
+        <% end %>
+      </tbody>
+    </table>    
+    <%= link_to '添加经销商', new_admin_customer_path,:class => "btn btn-primary pull-right" %>
+  </div>
+</div>

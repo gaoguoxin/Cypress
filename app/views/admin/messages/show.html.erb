@@ -1,0 +1,20 @@
+<p>
+  <strong>姓名:</strong>
+  <%= @message.username %>
+</p>
+<p>
+  <strong>邮箱:</strong>
+  <%= @message.email %>
+</p>
+<p>
+  <strong>电话:</strong>
+  <%= @message.phone %>
+</p>
+<p>
+  <strong>日期:</strong>
+  <%= @message.created_at.strftime('%F') %>
+</p>
+<p>
+  <strong>内容:</strong>
+  <%= raw @message.content %>
+</p>

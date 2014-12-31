@@ -15,9 +15,8 @@
         <td><%= category.name %></td>
         <td><%= category.show_status %></td>
         <td>
-          <%= link_to '查看', category,:class => 'btn btn-primary' %>
+          <%= link_to '查看', admin_category_path(category),:class => 'btn btn-primary' %>
           <%= link_to '编辑', edit_admin_category_path(category),:class => 'btn btn-success' %>
-          <%= link_to '删除', category, method: :delete, data: { confirm: '确定删除？' },:class => 'btn btn-danger' %>
       </tr>
     <% end %>
       </tbody>

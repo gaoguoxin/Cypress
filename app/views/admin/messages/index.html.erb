@@ -1,0 +1,30 @@
+<h2 class="sub-header">留言列表</h2>
+<div class="table-responsive">
+  <div class='messages'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class='col-xs-3'>姓名</th>
+          <th class='col-xs-3'>邮箱</th>
+          <th class='col-xs-2'>电话</th>
+          <th class='col-xs-2'>时间</th>
+          <th class='col-xs-2'>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @messages.each do |message| %>
+          <tr>
+            <td><%= message.username %></td>
+            <td><%= message.email %></td>
+            <td><%= message.phone %></td>
+            <td><%= message.created_at.strftime('%F')%></td>
+            <td>
+              <a role="button" class="btn btn-primary" href="<%= admin_message_path(message)%>">查看</button>
+            </td>
+          </tr> 
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

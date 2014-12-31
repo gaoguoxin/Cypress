@@ -1,6 +1,6 @@
 $(->
 	$('.admin_category a.btn-primary').click(->
-		title   = $.trim($('#admin_category_name').val())
+		title   = $.trim($('#category_name').val())
 		if (title.length > 0 )
 			$('.admin_category').submit() 
 	)

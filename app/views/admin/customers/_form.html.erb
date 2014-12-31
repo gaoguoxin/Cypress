@@ -1,0 +1,38 @@
+<%= form_for([:admin,@customer],:html => {:class => 'customer_form'}) do |f| %>
+  <div class="form-group row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <label>姓名<span class="text-danger">*</span></label><br> 
+      <%= f.text_field :username,:class => 'col-xs-12' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <label>收货地址<span class="text-danger">*</span></label><br> 
+      <%= f.text_field :address,:class => 'col-xs-12' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <label>是否合作</label>
+      <%= f.hidden_field :status%>
+      <div class="btn-group my-dropdown">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class='opt'>是</span><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li data-value='1'><a href="javascript:void(0);">是</a></li>
+          <li data-value='0'><a href="javascript:void(0);">否</a></li>
+        </ul>
+      </div>        
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <a href="javascript:void(0);" class="btn btn-primary btn-block">提交</a>
+    </div>
+    
+  </div>
+<% end %>

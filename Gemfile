@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-
+# source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.rc2'
 # Use SCSS for stylesheets
@@ -53,3 +53,7 @@ gem 'font-awesome-sass'
 
 gem "mini_magick"
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'sidekiq'
+gem 'anemone'
+gem 'qrcoder'
+

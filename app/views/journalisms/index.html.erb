@@ -4,6 +4,7 @@
 			<div id="inner2">
 				<div class="container journalisms">
 					<div class="row">
+					<% if @journalisms.length > 0  %>
 						<div class="span9">	
 							<div class=" title text-center"><h3><%= @journalisms.first.title%></h3></div>
 							<div class=" content"><%= raw @journalisms.first.content%></div>
@@ -22,6 +23,7 @@
             		<% end %>
             	<% end %>
             </div>
+          <% end %>  
 					</div>				
 				</div>
 			</div>	

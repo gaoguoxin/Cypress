@@ -1,65 +1,67 @@
 class Admin::ProductsController < Admin::AdminController
+  include QRCoder
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :get_categories,only: [:new,:edit]
+  before_action :get_customer, only: [:new,:edit]
   def index
-    @products = Admin::Product.all
+    @products = Product.where(flag:true).desc
   end
 
   def show
   end
 
   def new
-    @product = Admin::Product.new
+    @product = Product.new
   end
 
   def edit
   end
 
   def create
-    @product = Admin::Product.new(product_params)
-
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: '产品创建成功' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
-    end
+    ProductJob.perform_later('create',product_params) 
+    redirect_to admin_products_url
   end
 
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: '产品信息更新成功' }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
-    end
+    ProductJob.perform_later('update',product_params,params[:id]) 
+    redirect_to admin_products_url
   end
 
-  def destroy
-    @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: '产品删除成功' }
-      format.json { head :no_content }
-    end
+  def download
+    ProductJob.perform_later('download',product_params,params[:product_id])
   end
+
+  def rcoder
+    path     = Rails.root.to_s + '/public/download/qrcode/'
+    system("cd #{path} &&  rm -rf *.tar.gz")
+    product  = Product.where(id:params[:product_id]).first
+    Product.where(batch:product.batch,mtime:product.mtime,category_id:product.category_id.to_s).each do |pro|
+      QRCode.image(pro.id.to_s, path, :format => [:png], :filename => "#{pro.id.to_s}")
+    end
+    system("cd #{path} && tar zcvf qrcoder.tar.gz  *.png && rm -rf *.png")
+    send_file(path + 'qrcoder.tar.gz')
+  end
+
+
+
 
   private
 
     def set_product
-      @product = Admin::Product.find(params[:id])
+      @product = Product.find(params[:id])
     end
 
+
     def product_params
-      params.require(:admin_product).permit(:name, :description, :status, :category_id,:image)
+      params.require(:product).permit(:name, :address, :count, :category_id,:material,:mtime,:guarantee,:batch,:description,:flag,:customer_id)
+
     end
 
     def get_categories
-      @categories = Admin::Category.valid 
+      @categories = Category.valid 
+    end
+
+    def get_customer
+      @customers = Customer.valid 
     end
 end

@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     resources :journalisms
     resources :jobs
     resources :categories
-    resources :products    
+    resources :products do 
+      get 'download'
+      get 'rcoder'
+    end  
+    resources :messages 
+    resources :customers
   end
 
   root 'home#index'
@@ -18,7 +23,7 @@ Rails.application.routes.draw do
 
   resource :home
   resources :journalisms
-
+  resources :messages
   resources :users
 
   resources :sessions do 

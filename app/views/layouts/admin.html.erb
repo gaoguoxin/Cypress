@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    'admin/application', media: 'all' %>
   <%= javascript_include_tag 'admin/application' %>
   <%= csrf_meta_tags %>  
+  <%= yield :header %>
 </head>
 <body class='admin'>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -23,16 +24,25 @@
             <li class="<%= current?('journalisms',['index','show','edit'])%>"><a href="<%= admin_journalisms_path %>">新闻列表</a></li>
             <li class="<%= current?('journalisms',['new'])%>"><a href="<%=new_admin_journalism_path%>">添加新闻</a></li>
           </ul>
-          <hr>  
+          <hr>
+          <ul class="nav nav-sidebar">
+            <li class="<%= current?('messages',['index'])%>"><a href="<%= admin_messages_path %>">留言管理</a></li>
+          </ul> 
+          <hr>
+          <ul class="nav nav-sidebar">
+            <li class="<%= current?('customers',['index','show','edit'])%>"><a href="<%= admin_messages_path %>">经销商管理</a></li>
+            <li class="<%= current?('customers',['new'])%>"><a href="<%=new_admin_customer_path%>">添加经销商</a></li>
+          </ul> 
+          <hr>
           <ul class="nav nav-sidebar">
             <li class="<%= current?('categories',['index','show','edit'])%>"><a href="<%= admin_categories_path %>">分类列表</a></li>
             <li class="<%= current?('categories',['new'])%>"><a href="<%=new_admin_category_path%>">添加分类</a></li>
           </ul>
-          <hr>
+          <hr>          
           <ul class="nav nav-sidebar">
             <li class="<%= current?('products',['index','show','edit'])%>"><a href="<%= admin_products_path %>">产品列表</a></li>
             <li class="<%= current?('products',['new'])%>"><a href="<%= new_admin_product_path %>">添加产品</a></li>
-          </ul>
+          </ul>                     
         </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

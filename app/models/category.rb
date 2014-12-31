@@ -12,4 +12,9 @@ class Category
 
   scope :valid, ->{where(status:VALID)}
 
+  def show_status
+  	return '已发布' if status == VALID
+  	return '未发布' if status == INVALID
+  end
+
 end

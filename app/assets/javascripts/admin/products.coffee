@@ -1,22 +1,25 @@
 $(->
-	$("#admin_product_image").fileinput({showUpload: false})
-	$('#product_summernote').summernote();
-
-	$('.product_form a.btn-primary').click(->
-		title   = $('#admin_product_name').val()
-		content = $('.product_form #product_summernote').code()
-
-		if (title.length > 0 && content.length > 0)
-			$('#admin_product_description').text(content)
-			$('.product_form').submit() 
-	)
-
-	$('.product_form .my-dropdown li').click(->
+	$('#sproduct_customer_id').multiselect();
+	$('.product_form li').click(->
 		button = $(this).parents('ul').siblings('button').find('span.opt')
 		button.text($(this).text())
 		value  = $(this).data('category')
-		$('#admin_product_category_id').val(value)
+		$('#product_category_id').val(value)
+	) 
+
+	$("#product_mtime" ).datepicker({dateFormat: "yy-mm-dd"})   
+
+	$('.product_form a.btn').click(->
+		str = ''
+		$('ul.multiselect-container input:checked').map(()->
+			str += $(@).val() + ','
+		)
+
+		$('#product_customer_id').val(str)
+		$('.product_form').submit() 
 	)
+
+
 
 
 

@@ -3,7 +3,7 @@ class Admin::CategoriesController < Admin::AdminController
 
 
   def index
-    @categories = Admin::Category.all
+    @categories = Category.all
   end
 
 
@@ -11,7 +11,7 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def new
-    @category = Admin::Category.new
+    @category = Category.new
   end
 
 
@@ -20,11 +20,11 @@ class Admin::CategoriesController < Admin::AdminController
 
 
   def create
-    @category = Admin::Category.new(category_params)
+    @category = Category.new(category_params)
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: '新分类创建成功.' }
+        format.html { redirect_to admin_category_path(@category), notice: '新分类创建成功.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
@@ -37,11 +37,9 @@ class Admin::CategoriesController < Admin::AdminController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: '分类修改成功.' }
-        format.json { render :show, status: :ok, location: @category }
+        format.html { redirect_to admin_category_path(@category), notice: '分类修改成功.' }
       else
         format.html { render :edit }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,10 +56,10 @@ class Admin::CategoriesController < Admin::AdminController
   private
 
     def set_category
-      @category = Admin::Category.find(params[:id])
+      @category = Category.find(params[:id])
     end
 
     def category_params
-      params.require(:admin_category).permit(:name, :status)
+      params.require(:category).permit(:name, :status)
     end
 end

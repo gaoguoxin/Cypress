@@ -22,11 +22,17 @@ body.admin{
 				height:300px;
 			}
 		}
-		#admin_product_description{
+		// #product_description{
+		// 	display:none;
+		// }
+		#product_category_id{
 			display:none;
 		}
-		#admin_product_category_id{
-			display:none;
-		}
+	}
+	.rcode{
+		width:120px;
+		height:120px;
+		float:left;
+		margin-right:10px;
 	}
 }

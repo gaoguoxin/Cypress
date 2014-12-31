@@ -1,5 +1,5 @@
 <div class="row">
-  <%= form_for(@category,:html => {:class => 'admin_category col-xs-6 col-xs-offset-3'}) do |f| %>
+  <%= form_for([:admin,@category],:html => {:class => 'admin_category col-xs-6 col-xs-offset-3'}) do |f| %>
     <div class="form-group row">
       <label>分类名称</label><br>  
       <%= f.text_field :name,:class => 'col-xs-12' %>

@@ -2,21 +2,44 @@
   <strong>产品名称:</strong>
   <%= @product.name %>
 </p>
-
 <p>
-  <strong>图片:</strong>
-  <%= image_tag(@product.image_url) if @product.image? %>
+  <strong>分类:</strong>
+  <%= @product.category.name %>
+</p>
+<p>
+  <strong>产地:</strong>
+  <%= @product.address %>
+</p>
+<p>
+  <strong>产地:</strong>
+  <%= @product.address %>
+</p>
+<p>
+  <strong>产量:</strong>
+  <%= @product.count %>
+</p>
+<p>
+  <strong>批次:</strong>
+  <%= @product.batch %>
+</p>
+<p>
+  <strong>原料:</strong>
+  <%= @product.material %>
+</p>
+<p>
+  <strong>保质期:</strong>
+  <%= @product.guarantee %>个月
+</p>
+<p>
+  <strong>出厂时间:</strong>
+  <%= @product.mtime %>
 </p>
 
 <p>
-  <strong>产品描述:</strong>
+  <strong>其他信息:</strong>
   <%= @product.description %>
 </p>
 
-<p>
-  <strong>状态:</strong>
-  <%= @product.show_status %>
-</p>
 
 <%= link_to '编辑', edit_admin_product_path(@product) %> |
 <%= link_to '返回', admin_products_path %>

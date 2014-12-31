@@ -22,38 +22,38 @@
               <h2>留言</h2>
               <div id="note"></div>
               <div id="fields">
-                <form id="ajax-contact-form" class="form-horizontal" action="javascript:alert('success!');">
+                <form id="ajax-contact-form" class="form-horizontal" >
                   <div class="row">
                     <div class="span5">
                       <div class="control-group">
-                          <label class="control-label" for="inputName">姓名:</label>
+                          <label class="control-label" for="username">姓名:</label>
                           <div class="controls">              
-                            <input class="span5" type="text" id="inputName" name="name" value="请输入您的姓名:" onBlur="if(this.value=='') this.value='请输入您的姓名:'" onFocus="if(this.value =='请输入您的姓名:' ) this.value=''">
+                            <input class="span5" type="text" id="username" name="username" value="请输入您的姓名:" onBlur="if(this.value=='') this.value='请输入您的姓名:'" onFocus="if(this.value =='请输入您的姓名:' ) this.value=''">
                           </div>
                       </div>
                       <div class="control-group">
-                          <label class="control-label" for="inputEmail">邮箱:</label>
+                          <label class="control-label" for="email">邮箱:</label>
                           <div class="controls">              
-                            <input class="span5" type="text" id="inputEmail" name="email" value="请输入您的邮箱:" onBlur="if(this.value=='') this.value='请输入您的邮箱:'" onFocus="if(this.value =='请输入您的邮箱:' ) this.value=''">
+                            <input class="span5" type="text" id="email" name="email" value="请输入您的邮箱:" onBlur="if(this.value=='') this.value='请输入您的邮箱:'" onFocus="if(this.value =='请输入您的邮箱:' ) this.value=''">
                           </div>
                       </div>
                       <div class="control-group">
-                          <label class="control-label" for="inputPhone">电话:</label>
+                          <label class="control-label" for="phone">电话:</label>
                           <div class="controls">              
-                            <input class="span5" type="text" id="inputPhone" name="phone" value="请输入您的电话:" onBlur="if(this.value=='') this.value='请输入您的电话:'" onFocus="if(this.value =='请输入您的电话:' ) this.value=''">
+                            <input class="span5" type="text" id="phone" name="phone" value="请输入您的电话:" onBlur="if(this.value=='') this.value='请输入您的电话:'" onFocus="if(this.value =='请输入您的电话:' ) this.value=''">
                           </div>
                       </div>
                     </div>
                     <div class="span4">
                       <div class="control-group">
-                          <label class="control-label" for="inputMessage">内容:</label>
+                          <label class="control-label" for="message">内容:</label>
                           <div class="controls">                            
-                            <textarea class="span4" id="inputMessage" name="content" onBlur="if(this.value=='') this.value='请输入内容:'"  onFocus="if(this.value =='请输入内容:' ) this.value=''">请输入内容:</textarea>
+                            <textarea class="span4" id="message" name="content" onBlur="if(this.value=='') this.value='请输入内容:'"  onFocus="if(this.value =='请输入内容:' ) this.value=''">请输入内容:</textarea>
                           </div>
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="submit"><em></em>提交</button>
+                  <a href='javascript:void(0);' class='btn btn-default'><em></em>提交</a>
                 </form>
               </div>
             </div>

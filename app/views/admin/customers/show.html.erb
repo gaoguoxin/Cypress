@@ -1,0 +1,19 @@
+<p>
+  <strong>姓名:</strong>
+  <%= @customer.username %>
+</p>
+<p>
+  <strong>收货地址:</strong>
+  <%= @customer.address %>
+</p>
+<p>
+  <strong>赠品剩余量:</strong>
+  <%= @customer.show_remain %>
+</p>
+<p>
+  <strong>状态:</strong>
+  <%= @customer.show_status %>
+</p>
+
+<%= link_to '编辑', edit_admin_customer_path(@customer) %> |
+<%= link_to '返回', admin_customers_path %>
