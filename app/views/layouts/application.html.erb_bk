@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>柏树庄|绿色有机食品|循环农业</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'front/application', media: 'all' %>
+  <%= javascript_include_tag 'front/application' %>
+  <%= csrf_meta_tags %>  
+  <!--[if lt IE 9]>
+    <script src="/assets/html5.js"></script>      
+    <link rel="stylesheet" href="/assets/ie.css" type="text/css" media="screen">
+  <![endif]-->  
+  <%= yield :header %>
+</head>
+<body class='front'>
+  <%= image_tag('comming_soon.jpg',:class => 'comming')%>
+</body>
+</html>

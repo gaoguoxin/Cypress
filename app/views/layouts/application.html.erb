@@ -14,6 +14,102 @@
   <%= yield :header %>
 </head>
 <body class='front'>
-  <%= image_tag('comming_soon.jpg',:class => 'comming')%>
+<div id="main">
+  <header>
+    <div class="logo_wrapper"><a href="index.html" class="logo"><%= image_tag('logo.png')%></a></div> 
+    <div class="top2">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <div class="top2_inner">
+              <div class="navbar navbar_">
+                <div class="navbar-inner navbar-inner_">
+                  <a class=" btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <div class="nav-collapse nav-collapse_ collapse">
+                    <ul class="nav sf-menu clearfix">
+                      <li class="sub-menu sub-menu-1  <%= current_page?('index')%>"><a href="/">柏树庄</a></li>
+                      <li class="<%= current_page?('about')%>"><a href="/about">关于我们</a></li>       
+                      <li class="<%= current_page?('product')%> sub-menu sub-menu-1">
+                        <a href="/product">产品简介<em></em></a>
+                        <ul>
+                          <li><a href="/product#twp">调味品</a></li>
+                          <li><a href="/product#meat">肉类</a></li>  
+                          <li><a href="/product#fruit">果蔬</a></li>
+                          <li><a href="/product#flour">面粉</a></li> 
+                          <li><a href="/product#agricultural">农副产品</a></li>
+                          <li><a href="/product#oil">食用油</a></li>
+                        </ul> 
+                      </li>
+                      <li class="<%= current_page?('circulate')%>"><a href="">循环产业园</a></li>
+                      <li class="<%= current_page?('galley')%>"><a href="">柏树庄美味厨房</a></li>
+                      <li class="<%= current_page?('agency')%>"><a href="">更多服务</a></li>
+                      <li class="<%= controller_name == 'contact' ? 'active' : '' %>"><a href="/contact">联系我们</a></li>                  
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </header> 
+  <div id="slider" class="clearfix">
+    <div id="camera_wrap">
+      <div data-src="<%= asset_path('slide1.jpg')%>">
+        <div class="camera_caption fadeIn">
+          <div class="txt1">A satisfied customer </div>
+          <div class="txt2">is the best business strategy of all.</div>     
+        </div>     
+      </div>
+      <div data-src="<%= asset_path('slide2.jpg')%>">
+        <div class="camera_caption fadeIn">
+          <div class="txt1">A satisfied customer </div>
+          <div class="txt2">is the best business strategy of all.</div>     
+        </div>     
+      </div>
+      <div data-src="<%= asset_path('slide3.jpg')%>">
+        <div class="camera_caption fadeIn">
+          <div class="txt1">A satisfied customer </div>
+          <div class="txt2">is the best business strategy of all.</div>     
+        </div>     
+      </div>
+      <div data-src="<%= asset_path('slide4.jpg')%>">
+        <div class="camera_caption fadeIn">
+          <div class="txt1">A satisfied customer </div>
+          <div class="txt2">is the best business strategy of all.</div>     
+        </div>     
+      </div>  
+    </div>  
+  </div>
+  <%= yield %>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="bot clearfix">
+            <div class="bot1">
+              <div class="menu_bot">
+                  <ul id="menu_bot" class="clearfix">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-1.html">Company</a></li>
+                    <li><a href="index-2.html">Services</a></li>
+                    <li><a href="index-3.html">Products</a></li>
+                    <li><a href="index-4.html">Solutions</a></li>
+                    <li><a href="index-5.html">Contacts</a></li>          
+                  </ul>
+              </div>
+            </div>  
+          </div>
+          <div class="copyright">Copyright © 2013. All rights reserved.</div>
+        </div>  
+      </div>  
+    </div>    
+  </footer>
+</div>
 </body>
 </html>
