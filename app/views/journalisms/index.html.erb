@@ -1,32 +1,33 @@
 <div id="content">
-	<div id="content2">
-		<div id="inner">
-			<div id="inner2">
-				<div class="container journalisms">
-					<div class="row">
-					<% if @journalisms.length > 0  %>
-						<div class="span9">	
-							<div class=" title text-center"><h3><%= @journalisms.first.title%></h3></div>
-							<div class=" content"><%= raw @journalisms.first.content%></div>
-							<div class=" date text-right"><h4>发布时间：<%= @journalisms.first.updated_at.strftime('%F') %></h4></div>
-						</div>
+  <div id="content2">
+    <div id="inner">
+      <div id="inner2">
+        <div class="container journalisms">
+          <div class="row">
+          <% if @journalisms.length > 0  %>
+            <div class="span9"> 
+              <div class=" title text-center"><h3><%= @journalism.title%></h3></div>
+              <div class=" content"><%= raw @journalism.content%></div>
+              <div class=" date text-right"><h4>发布时间：<%= @journalism.updated_at.strftime('%F') %></h4></div>
+            </div>
             <div class="span3 rside">
-            	<h3>其他新闻</h3>
-            	<% @journalisms.each_with_index do |jour,idx|%>
-            		<% unless idx == 0 %>
-									<div class='row'>
-										<a href="/journalisms/<%= jour.id.to_s%>">
-											<div class="span1"><%= image_tag(jour.image_url(:thumb),:class => 'img-responsive')%></div>
-											<div class="span2"><%=jour.title%></div>
-										</a>
-									</div>            		
-            		<% end %>
-            	<% end %>
+              <h3>其他新闻</h3>
+              <% @journalisms.each_with_index do |jour,idx|%>
+                <% unless jour.id.to_s == @journalism.id.to_s %>
+                  <div class='row'>
+                    <a href="/journalisms/<%= jour.id.to_s%>">
+                      <div class="span1"><%= image_tag(jour.image_url(:thumb),:class => 'img-responsive')%></div>
+                      <div class="span2"><%=jour.title%></div>
+                    </a>
+                  </div>
+                <% end %>
+              <% end %>
+              <%= paginate @journalisms %>
             </div>
           <% end %>  
-					</div>				
-				</div>
-			</div>	
-		</div>
-	</div>	
+          </div>        
+        </div>
+      </div>  
+    </div>
+  </div>  
 </div>

@@ -40,7 +40,7 @@ group :development, :test do
   gem 'spring'
 end
 
-
+gem 'kaminari'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'moped', '~> 2.0.2'
 
