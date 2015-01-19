@@ -1076,14 +1076,14 @@
 
 .camera_caption{ position: absolute; left: 0; bottom: 0px;background: image-url('camera_caption_px1.png');}
 .camera_caption > div{ width: 940px; margin: 0 auto; padding: 20px 0; background: none; }
-.camera_caption .txt1{font-family: 'Roboto'; font-weight: 700; font-size: 40px; line-height: 40px; color: #fff;}
-.camera_caption .txt2{font-family: 'Roboto'; font-weight: 300; font-size: 40px; line-height: 40px; color: #fff;}
+.camera_caption .txt1{font-family: 'Microsoft Yahei'; font-weight: 700; font-size: 20px; line-height: 40px; color: #fff;}
+.camera_caption .txt2{font-family: 'Microsoft Yahei'; font-weight: 300; font-size: 14px; line-height: 40px; color: #fff;}
 
 
 @media (min-width: 1200px) {
 	.camera_caption > div{width: 1170px;}
-	.camera_caption .txt1{font-size: 50px; line-height: 50px;}
-	.camera_caption .txt2{font-size: 50px; line-height: 50px;}
+	.camera_caption .txt1{font-size: 30px; line-height: 50px;}
+	.camera_caption .txt2{font-size: 30px; line-height: 50px;}
 	.camera_wrap .camera_pag .camera_pag_ul{margin-right: -585px; bottom: 55px;}
 	
 }

@@ -16,7 +16,7 @@
 <body class='front'>
 <div id="main">
   <header>
-    <div class="logo_wrapper"><a href="index.html" class="logo"><%= image_tag('logo.png')%></a></div> 
+    <div class="logo_wrapper"><a href="/" class="logo"><%= image_tag('logo.png')%></a></div> 
     <div class="top2">
       <div class="container">
         <div class="row">
@@ -45,7 +45,7 @@
                         </ul> 
                       </li>
                       <li class="<%= current_page?('circulate')%>"><a href="">循环产业园</a></li>
-                      <li class="<%= current_page?('galley')%>"><a href="">柏树庄美味厨房</a></li>
+                      <li class="<%= current_page?('galley')%>"><a href="/galley">柏树庄美味厨房</a></li>
                       <li class="<%= current_page?('galley')%>"><a href="">二维码追溯</a></li>
                       <li class="<%= current_page?('galley')%>"><a href="">经销商订货</a></li>
                       <li class="<%= current_page?('agency')%> sub-menu sub-menu-1"><a href="javascript:void(0);">更多<em></em></a>
@@ -66,28 +66,28 @@
   </header> 
   <div id="slider" class="clearfix">
     <div id="camera_wrap">
-      <div data-src="<%= asset_path('slide1.jpg')%>">
-        <div class="camera_caption fadeIn">
-          <div class="txt1">A satisfied customer </div>
-          <div class="txt2">is the best business strategy of all.</div>     
-        </div>     
-      </div>
       <div data-src="<%= asset_path('slide2.jpg')%>">
         <div class="camera_caption fadeIn">
-          <div class="txt1">A satisfied customer </div>
-          <div class="txt2">is the best business strategy of all.</div>     
+          <div class="txt1">食品行业是良心行业</div>
+          <div class="txt2">柏树庄醋业有限责任公司100%纯粮酿造</div>     
         </div>     
       </div>
       <div data-src="<%= asset_path('slide3.jpg')%>">
         <div class="camera_caption fadeIn">
-          <div class="txt1">A satisfied customer </div>
-          <div class="txt2">is the best business strategy of all.</div>     
+          <div class="txt1">柏树庄美味厨房</div>
+          <div class="txt2">一个绿色健康生活的倡导者</div>     
         </div>     
       </div>
       <div data-src="<%= asset_path('slide4.jpg')%>">
         <div class="camera_caption fadeIn">
-          <div class="txt1">A satisfied customer </div>
-          <div class="txt2">is the best business strategy of all.</div>     
+          <div class="txt1">柏树庄循环产业园</div>
+          <div class="txt2">国内领先的闭环循环经济</div>     
+        </div>     
+      </div>
+      <div data-src="<%= asset_path('slide1.jpg')%>">
+        <div class="camera_caption fadeIn">
+          <div class="txt1">柏树庄生活方式</div>
+          <div class="txt2">我们用纯粮酿造工艺，与您体会柏味人生</div>     
         </div>     
       </div>  
     </div>  

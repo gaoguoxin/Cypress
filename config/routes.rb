@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get  'product' => 'home#product'
   get  'about' => 'home#about'
+  get  'galley' => 'home#galley'
   get  'job' => 'home#job'
   get  'contact' => 'home#contact'
   get  'clients'  => 'home#clients'
