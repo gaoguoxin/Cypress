@@ -22,6 +22,10 @@ class HomeController < ApplicationController
   def galley
   end
 
+  #循环产业园
+  def circulate
+  end
+
   def contact
   end
 
