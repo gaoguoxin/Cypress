@@ -185,7 +185,9 @@
               <% @jours.each do |jour|%>
                 <div class="thumb5">
                   <div class="thumbnail clearfix">
-                    <figure class="img-polaroid"><%= image_tag jour.image_url(:thumb)%></figure>
+                    <% if image_tag jour.image_url(:thumb)%>
+                      <figure class="img-polaroid"><%= image_tag jour.image_url(:thumb)%></figure>
+                    <% end %>
                     <div class="caption">
                       <h4><a href="/journalisms/<%=jour.id.to_s%>"><%= jour.title %></a></h4>
                       <div><%= raw jour.content.truncate(300)  %></div>
