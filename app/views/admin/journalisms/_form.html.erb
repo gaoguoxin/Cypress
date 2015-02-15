@@ -10,7 +10,8 @@
   </div>   
   <div class="form-group row">
     <label>新闻内容</label><br>
-    <%= f.text_area :content,:class => 'col-xs-12' %>
+    <%= f.cktext_area :content, :class => 'someclass', :ckeditor => {:language => 'zh-cn'} %>
+    <%#= f.text_area :content,:class => 'col-xs-12' %>
   </div> 
   <div class="form-group row text-right">
     <label>是否发布</label>

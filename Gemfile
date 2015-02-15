@@ -40,7 +40,9 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'ckeditor_rails'
+gem 'responders', '~> 2.0'
+
+gem 'ckeditor'
 
 gem 'kaminari'
 gem 'mongoid', github: 'mongoid/mongoid'
