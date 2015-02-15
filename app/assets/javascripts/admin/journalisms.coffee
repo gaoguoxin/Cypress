@@ -1,12 +1,10 @@
 $(->
 	$("#admin_journalism_image").fileinput({showUpload: false})
-	$('#summernote').summernote();
+	# $('#summernote').summernote();
+	$('#admin_journalism_content').ckeditor()
 	$('.journalism_form a.btn-primary').click(->
 		title   = $('#admin_journalism_title').val()
-		content = $('.journalism_form #summernote').code()
-
-		if (title.length > 0 && content.length > 0)
-			$('#admin_journalism_content').text(content)
+		if (title.length > 0 )
 			$('.journalism_form').submit() 
 	)
 
@@ -17,3 +15,4 @@ $(->
 		$('#admin_journalism_status').val(value)
 	)
 )
+

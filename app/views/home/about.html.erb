@@ -14,10 +14,11 @@
                   <figure class="img-polaroid"><%= image_tag('clients01.jpg')%></figure>
                   <div class="caption">
                     <h4>
-                      武威柏树庄醋业有限责任公司地处甘肃省武威市凉州区黄羊镇。公司地理位置优越，交通便利，现为省内酿造食醋产能较大的企业。公司始建于1983年2月，经过二十多年的艰苦创业和不懈努力，树立了“柏树庄”牌酱油、熏醋的优良品牌和良好形象。
+                      武威柏树庄醋业有限责任公司地处甘肃省武威市黄羊镇，厂区位于西部食品工业城——黄羊绿色食品科技示范区。这里地理位置优越，交通便利，如今的柏树庄是省内最大的酱醋酿造企业，也是西北赫赫有名的安全食品企业！
+                      柏树庄醋业有限责任公司始建于1983年。30多年来，我们始终秉承食品行业是良心行业的责任心，坚守100%纯粮酿造的加工工艺，在公众心目中树立了“柏树庄”酱油、熏醋的良好形象，打造出一块西北安全食品的金字招牌！
                     </h4>
                     <p>
-                      柏树庄有机农场是柏树庄闭环循环农业中重要的一环，处于酿造、发酵、等诸多环节的最后一步，柏树庄有机蔬菜严格按照有机生产规程，禁止使用任何化学合成的农药、化肥，以及基因工程生物及其产物；我们遵循自然规律和生态学原理，采取一系列可持续发展的农业技术，协调种植平衡，2003年12月“柏树庄”酿造食醋被中国绿色食品发展中心认定为“绿色食品”证书号：LB-56-0312271508A。 
+                      在生产方面：占地33亩、拥有18条全机械化固态发酵生产线年均生产食醋能力超过10000吨；绿色环保太阳能高盐稀态酱油生产线10条，年生产能力超过3000吨；20条自主研发的固淋式全自动白醋生产线年酿造白醋能力超5000吨，纯粮酿造酱醋生产能力居省内第一。
                     </p>              
                   </div>
                 </div>
@@ -178,38 +179,22 @@
                   </div>
                 </div>                              
               </div>                          
-            </div>
+            </div> 
             <div class="span3">
               <h3>最新新闻</h3>
-              <div class="thumb5">
-                <div class="thumbnail clearfix">
-                  <figure class="img-polaroid"><%= image_tag @jour.image_url(:thumb)%></figure>
-                  <div class="caption">
-                    <h4>
-                      <a href="/journalisms/<%=@jour.id.to_s%>"><%= @jour.title %></a>
-                    </h4>
-                    <div>
-                      <%= raw @jour.content.truncate(800)  %>
+              <% @jours.each do |jour|%>
+                <div class="thumb5">
+                  <div class="thumbnail clearfix">
+                    <figure class="img-polaroid"><%= image_tag jour.image_url(:thumb)%></figure>
+                    <div class="caption">
+                      <h4><a href="/journalisms/<%=jour.id.to_s%>"><%= jour.title %></a></h4>
+                      <div><%= raw jour.content.truncate(300)  %></div>
                     </div>
                   </div>
                 </div>
-              </div>
-<!--               <div class="line1"></div>
-              <div class="thumb5">
-                <div class="thumbnail clearfix">
-                  <figure class="img-polaroid"><%#= image_tag('contacts02.jpg')%></figure>
-                  <div class="caption">
-                    <h4>
-                      销售负责人
-                    </h4>
-                    <p>
-                      这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息这里是销售负责人相关信息 
-                    </p>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-          </div>
+              <% end %>
+            </div> <!-- span3 -->
+          </div> <!-- row -->
           <div class="line1"></div>
           <div class="row">
             <h3>联系我们</h3>
@@ -221,12 +206,12 @@
               </p>
               <p>客服: 400-887-2060</p>                
             </div>
-          </div>          
-        </div>
-      </div>  
-    </div>
-  </div>  
-</div>
+          </div> <!-- row -->         
+        </div> <!-- container -->
+      </div>   <!-- inner2 -->
+    </div> <!-- inner -->
+  </div> <!-- content2 -->  
+</div><!-- content -->
 <script type='text/javascript'>
   var map = new BMap.Map("baidu_map");          // 创建地图实例  
   var myGeo = new BMap.Geocoder();      

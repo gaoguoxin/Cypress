@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   end
 
   def about
-  	@jour = Journalism.valid.desc(:updated_at).first
+  	@jours = Journalism.valid.desc(:updated_at).limit(2)
   end
 
   #循环产业园
@@ -19,7 +19,7 @@ class HomeController < ApplicationController
   end
 
   #美味厨房
-  def galley
+  def bszcf
   end
 
   #循环产业园

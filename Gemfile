@@ -40,6 +40,8 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'ckeditor_rails'
+
 gem 'kaminari'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'moped', '~> 2.0.2'
@@ -54,6 +56,5 @@ gem 'font-awesome-sass'
 gem "mini_magick"
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'sidekiq'
-gem 'anemone'
 gem 'qrcoder'
 
