@@ -1,7 +1,7 @@
 $(->
 	$("#admin_journalism_image").fileinput({showUpload: false})
 	# $('#summernote').summernote();
-	$('#admin_journalism_content').ckeditor()
+	#$('#admin_journalism_content').ckeditor()
 	$('.journalism_form a.btn-primary').click(->
 		title   = $('#admin_journalism_title').val()
 		if (title.length > 0 )
