@@ -15,14 +15,13 @@
             		<% unless jour.id.to_s == @jour.id.to_s%>
 									<div class='row'>
 										<a href="/journalisms/<%= jour.id.to_s%>">
-											<% if image_tag(jour.image_url(:thumb)%>
+											<% if image_tag(jour.image_url(:thumb))%>
 												<div class="span1"><%= image_tag(jour.image_url(:thumb),:class => 'img-responsive')%>
 												<div class="span2"><%=jour.title%></div>
 											<% else %>
 												<div class="span3"><%=jour.title%></div>
 											<% end %>
-											</div>
-											
+											</div>	
 										</a>
 									</div>
 								<% end %>
