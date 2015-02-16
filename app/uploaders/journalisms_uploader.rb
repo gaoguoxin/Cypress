@@ -38,19 +38,19 @@ class JournalismsUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fill => [80, 80]
+    process :resize_to_fit => [80, 80]
   end
 
   version :middle do
-    process :resize_to_fill => [258, 160]
+    process :resize_to_fit => [258, 160]
   end  
 
   version :large do
-    process :resize_to_fill => [288, 176]
+    process :resize_to_fit => [288, 176]
   end  
 
   version :submiddle do 
-    process :resize_to_fill => [208, 208]
+    process :resize_to_fit => [208, 208]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
