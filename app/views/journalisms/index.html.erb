@@ -15,14 +15,16 @@
               <% @journalisms.each_with_index do |jour,idx|%>
                 <% unless jour.id.to_s == @journalism.id.to_s %>
                   <div class='row'>
-                    <a href="/journalisms/<%= jour.id.to_s%>">
-                      <% if image_tag(jour.image_url(:thumb))%>
-                        <div class="span1"><%= image_tag(jour.image_url(:thumb),:class => 'img-responsive')%>
-                        <div class="span2"><%=jour.title%></div>
-                      <% else %>
-                        <div class="span3"><%=jour.title%></div>
-                      <% end %>
-                    </a>
+                    <% if image_tag(jour.image_url(:thumb))%>
+                      <div class="span1">
+                        <a href="/journalisms/<%= jour.id.to_s%>">
+                          <%= image_tag(jour.image_url(:thumb),:class => 'img-responsive')%>
+                        </a>
+                      </div>
+                      <div class="span2"><a href="/journalisms/<%= jour.id.to_s%>"><%=jour.title%></a></div>                    
+                    <% else %>
+                      <div class="span3"><a href="/journalisms/<%= jour.id.to_s%>"><%=jour.title%></a></div>   
+                    <% end %>
                   </div>
                 <% end %>
               <% end %>
